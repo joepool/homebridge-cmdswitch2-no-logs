@@ -1,4 +1,5 @@
-# homebridge-cmdswitch2 [![npm version](https://badge.fury.io/js/homebridge-cmdswitch2.svg)](https://badge.fury.io/js/homebridge-cmdswitch2)
+# homebridge-cmdswitch2-no-logs
+Fork that prevents exceesive state logging.
 CMD Plugin for [HomeBridge](https://github.com/nfarina/homebridge) (API 2.0)
 
 Older version using API 1.0: [homebridge-cmdswitch](https://github.com/luisiam/homebridge-cmdswitch) (deprecated)
@@ -21,7 +22,7 @@ This plugin can only run CLI commands the same as you typing them yourself. In o
 
 # Installation
 1. Install homebridge using `npm install -g homebridge`.
-2. Install this plugin using `npm install -g homebridge-cmdswitch2`.
+2. Install this plugin using `npm install -g homebridge-cmdswitch2-no-logs`.
 3. Update your configuration file. See configuration sample below.
 
 # Configuration

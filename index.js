@@ -197,7 +197,7 @@ cmdSwitchPlatform.prototype.getPowerState = function (thisSwitch, callback) {
 
   if (thisSwitch.polling) {
     // Get state directly from cache if polling is enabled
-    this.log(thisSwitch.name + " is " + (thisSwitch.state ? "on." : "off."));
+    //this.log(thisSwitch.name + " is " + (thisSwitch.state ? "on." : "off."));
     callback(null, thisSwitch.state);
   } else {
     // Check state if polling is disabled
