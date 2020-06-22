@@ -204,11 +204,12 @@ cmdSwitchPlatform.prototype.getPowerState = function (thisSwitch, callback) {
     this.getState(thisSwitch, function (error, state) {
       // Update state if command exists
       if (thisSwitch.state_cmd) thisSwitch.state = state;
-      if (!error) self.log(thisSwitch.name + " is " + (thisSwitch.state ? "on." : "off."));
+      //if (!error) self.log(thisSwitch.name + " is " + (thisSwitch.state ? "on." : "off."));
       callback(error, thisSwitch.state);
     });
   }
 }
+
 
 // Method to set state
 cmdSwitchPlatform.prototype.setPowerState = function (thisSwitch, state, callback) {
