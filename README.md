@@ -1,6 +1,6 @@
 # homebridge-cmdswitch2-no-logs
 Fork that prevents exceesive state logging.
-This also incluises a Config UI X configuration page.
+This also includes a Config UI X configuration page.
 
 CMD Plugin for [HomeBridge](https://github.com/nfarina/homebridge) (API 2.0)
 
