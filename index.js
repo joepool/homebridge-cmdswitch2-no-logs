@@ -226,7 +226,7 @@ cmdSwitchPlatform.prototype.setPowerState = function (thisSwitch, state, callbac
       self.log("Failed to turn " + (state ? "on " : "off ") + thisSwitch.name);
       self.log(stderr);
     } else {
-      if (cmd) self.log(thisSwitch.name + " is turned " + (state ? "on." : "off."));
+      //if (cmd) self.log(thisSwitch.name + " is turned " + (state ? "on." : "off."));
       thisSwitch.state = state;
       error = null;
     }
