@@ -1,4 +1,8 @@
 # homebridge-cmdswitch2-no-logs
+
+[![npm](https://badgen.net/npm/v/homebridge-cmdswitch2-no-logs/latest)](https://www.npmjs.com/package/homebridge-cmdswitch2-no-logs) 
+[![npm](https://badgen.net/npm/dt/homebridge-cmdswitch2-no-logs)](https://www.npmjs.com/package/homebridge-cmdswitch2-no-logs)
+
 Fork that prevents exceesive state logging.
 This also includes a Config UI X configuration page.
 
