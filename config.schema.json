@@ -23,12 +23,12 @@
           "on_cmd":{
             "title": "On Command",
             "type": "string",
-            "required": false
+            "required": true
           },
           "off_cmd":{
             "title": "Off Command",
             "type": "string",
-            "required": false
+            "required": true
           },
           "state_cmd":{
             "title": "State Command",
