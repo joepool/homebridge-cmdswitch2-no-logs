@@ -7,7 +7,7 @@ module.exports = function (homebridge) {
   Characteristic = homebridge.hap.Characteristic;
   UUIDGen = homebridge.hap.uuid;
 
-  homebridge.registerPlatform("homebridge-cmdswitch2", "cmdSwitch2", cmdSwitchPlatform, true);
+  homebridge.registerPlatform("homebridge-cmdswitch2-no-logs", "cmdSwitch2", cmdSwitchPlatform, true);
 }
 
 function cmdSwitchPlatform(log, config, api) {
@@ -46,7 +46,7 @@ cmdSwitchPlatform.prototype.addAccessory = function (data) {
     accessory = new Accessory(data.name, uuid, 8);
     accessory.addService(Service.Switch, data.name);
     this.setService(accessory);
-    this.api.registerPlatformAccessories("homebridge-cmdswitch2", "cmdSwitch2", [accessory]);
+    this.api.registerPlatformAccessories("homebridge-cmdswitch2-no-logs", "cmdSwitch2", [accessory]);
     this.accessories[data.name] = accessory;
   }
 
@@ -86,7 +86,7 @@ cmdSwitchPlatform.prototype.removeAccessory = function (accessory) {
   if (accessory) {
     var name = accessory.context.name;
     this.log(name + " is removed from HomeBridge.");
-    this.api.unregisterPlatformAccessories("homebridge-cmdswitch2", "cmdSwitch2", [accessory]);
+    this.api.unregisterPlatformAccessories("homebridge-cmdswitch2-no-logs", "cmdSwitch2", [accessory]);
     delete this.accessories[name];
   }
 }
@@ -113,7 +113,7 @@ cmdSwitchPlatform.prototype.getInitState = function (accessory) {
   if (!accessory.context.polling) {
     accessory.getService(Service.Switch)
       .getCharacteristic(Characteristic.On)
-      .getValue();
+      .value;
   }
 
   // Ensure accessory is marked as reachable
@@ -159,7 +159,7 @@ cmdSwitchPlatform.prototype.statePolling = function (name) {
       thisSwitch.state = state;
       accessory.getService(Service.Switch)
         .getCharacteristic(Characteristic.On)
-        .getValue();
+        .value;
     }
   });
 
