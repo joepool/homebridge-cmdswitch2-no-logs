@@ -111,9 +111,12 @@ cmdSwitchPlatform.prototype.getInitState = function (accessory) {
     .setCharacteristic(Characteristic.SerialNumber, serial);
 
   if (!accessory.context.polling) {
-    accessory.getService(Service.Switch)
-      .getCharacteristic(Characteristic.On)
-      .value;
+    const characteristic = accessory.getService(Service.Switch)
+      .getCharacteristic(Characteristic.On);
+    if (characteristic.getHandler) {
+      characteristic.getHandler((err, latestValue) => {
+      });
+    }
   }
 
   // Ensure accessory is marked as reachable
@@ -157,9 +160,10 @@ cmdSwitchPlatform.prototype.statePolling = function (name) {
   this.getState(thisSwitch, function (error, state) {
     if (!error && state !== thisSwitch.state) {
       thisSwitch.state = state;
-      accessory.getService(Service.Switch)
-        .getCharacteristic(Characteristic.On)
-        .value;
+      const characteristic = accessory.getService(Service.Switch)
+        .getCharacteristic(Characteristic.On);
+
+      characteristic.updateValue(state);
     }
   });
 
